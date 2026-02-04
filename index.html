@@ -1,0 +1,255 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kerezsy Tech  Venta y Servicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a class="logo" href="index.html">
+        <img src="assets/logo-kerezsytech.jpeg" alt="KerezsyTech" class="site-logo">
+        <span class="brand">Kerezsy Tech</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-icon" href="index.html" title="Inicio">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      </a>
+      <a class="nav-icon" href="cart.html" title="Carrito">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="nav-svg"><path d="M7 4H5l-1 2H2v2h2l3.6 7.6c.2.5.7.8 1.2.8H19v-2h-8.2l-.9-1.9L19 8H8.2L7 4z" fill="currentColor"></path><circle cx="10" cy="19.5" r="1" fill="currentColor"></circle><circle cx="17" cy="19.5" r="1" fill="currentColor"></circle></svg>
+        <span id="cartCount" class="cart-count">0</span>
+      </a>
+      <a class="nav-icon" href="login.html" title="Iniciar sesión">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-5 0-9 2.5-9 5v1h18v-1c0-2.5-4-5-9-5z"/></svg>
+      </a>
+      <button id="themeToggle" class="nav-icon" title="Cambiar modo" aria-pressed="false">
+        <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="search-bar">
+    <div class="category-wrap">
+      <button id="catPrev" class="cat-ctrl" aria-label="Anterior categoría">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 L9 12 L15 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"></path></svg>
+      </button>
+      <nav class="category-list" aria-label="Categorías">
+        <a class="category-link" href="products.html?category=all">Todo</a>
+        <a class="category-link" href="products.html?category=storage">Almacenamiento</a>
+        <a class="category-link" href="products.html?category=memory">Memoria (RAM)</a>
+        <a class="category-link" href="products.html?category=cpu">Procesadores</a>
+        <a class="category-link" href="products.html?category=motherboard">Placas madre</a>
+        <a class="category-link" href="products.html?category=gpu">Tarjetas gráficas</a>
+        <a class="category-link" href="products.html?category=psu">Fuentes de poder</a>
+        <a class="category-link" href="products.html?category=cooling">Refrigeración</a>
+        <a class="category-link" href="products.html?category=case">Gabinetes</a>
+        <a class="category-link" href="products.html?category=peripherals">Periféricos</a>
+        <a class="category-link" href="products.html?category=monitor">Monitores</a>
+      </nav>
+      <button id="catNext" class="cat-ctrl" aria-label="Siguiente categoría">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 L15 12 L9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <header class="carousel" aria-label="Carrusel de productos">
+    <div class="slides">
+      <div class="slide">
+        <img src="assets/images/0003_actualidad_347479452_130336253_1706x960.jpg" alt="Almacenamiento" class="slide-img">
+        <div class="slide-content">
+          <h2>Almacenamiento</h2>
+          <p>NVMe, SSD y HDD para todas las necesidades</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="assets/images/0004_building-a-new-gaming-pc-in-2023.jpg" alt="PC Armadas" class="slide-img">
+        <div class="slide-content">
+          <h2>PCs Armadas a tu gusto</h2>
+          <p>A la medida y exigencias del cliente</p>
+        </div>
+      </div>
+      <div class="slide active">
+        <img src="assets/images/0005_how-to-choose-a-video-card-for-a-processor-banner_webp.jpg" alt="Procesadores" class="slide-img">
+        <div class="slide-content">
+          <h2>CPUs y GPUs tope de gama</h2>
+          <p>Potencia para creación de contenido, gaming y trabajos intensivos</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="assets/images/0006_1726585725846.jpg" alt="Periféricos" class="slide-img">
+        <div class="slide-content">
+          <h2>Monitores y Periféricos</h2>
+          <p>Calidad y elegancia para tu setup</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="carousel-controls">
+      <button id="prev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 L9 12 L15 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"></path></svg>
+      </button>
+      <button id="next" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 L15 12 L9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="services">
+      <h3>Servicios</h3>
+      <div class="cards">
+        <article class="card"><h4>Venta</h4><p>Amplia selección de equipos y accesorios</p></article>
+        <article class="card"><h4>Reparación</h4><p>Reparación de hardware y software</p></article>
+        <article class="card"><h4>Mantenimiento</h4><p>Limpieza, optimización y actualizaciones</p></article>
+        <article class="card"><h4>Armado a medida</h4><p>Armado de PC personalizado según presupuesto y exigencias del cliente</p></article>
+      </div>
+    </section>
+
+    <section class="recommended">
+      <h3>Productos recomendados</h3>
+      <p class="muted"></p>
+      <div id="recommendedList" class="rec-grid"></div>
+    </section>
+
+      <h3 class="tech-title">Técnico especializado</h3>
+      <section class="tech">
+        <div class="tech-inner">
+          <img src="assets/CEO,%20TECNICO,%20WERNER%20KEREZSY.jpg" alt="Werner Kerezsy - Técnico" class="tech-photo">
+          <div class="tech-desc">
+            <h4>Werner Kerezsy — Ingeniero en Informática</h4>
+            <p>Werner Kerezsy es Ingeniero en Informática y CEO de Kerezsy Tech. Posee amplia experiencia en diagnóstico y reparación de computadoras, laptops y telefonos móviles, así como en mantenimiento y optimización de los mismos. Ofrece soluciones rápidas y profesionales.</p>
+            <p>Servicios: Diagnóstico profesional, reparación de hardware y software, optimización de sistemas, recuperación de datos, asesoría técnica personalizada, sustitucion y mejora de componentes.</p>
+          </div>
+        </div>
+      </section>
+
+    <section class="support-chat">
+      <h3>Soporte</h3>
+      <p class="muted"></p>
+      <div class="chat-wrapper">
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <form id="chatForm" class="chat-form"><input id="msgInput" type="text" placeholder="Escribe tu mensaje..." required /><button type="submit">Enviar</button></form>
+      </div>
+      <p class="small"></p>
+    </section>
+  </main>
+
+
+  <footer class="site-footer modern-footer">
+    <div class="footer-inner container">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="assets/logo-kerezsytech.jpeg" alt="KerezsyTech" class="footer-logo">
+          <h4>Kerezsy Tech</h4>
+        </div>
+        <p>Venta, reparación y mantenimiento de PCs, Laptops y Dispositivos Móviles. Soporte técnico y Asesoramiento profesional.</p>
+      </div>
+      <div class="footer-col">
+       
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contáctanos</h4>
+        <p>Teléfono: <a href="tel:+58 4241976275">+58 424-197-6275</a></p>
+        <p>Correo: <a href="mailto:wfkerezsy@urbe.edu.ve">wfkerezsy@urbe.edu.ve</a></p>
+        
+        <div class="socials">
+          <a class="social-link" href="https://www.instagram.com/KerezsyTech" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="https://img.freepik.com/vector-premium/iconos-negocios-contabilidad-financiera-comercio-electronico-negocios-coleccion-iconos-gran-conjunto-vector-illustrat_1059745-252.jpg" alt="Instagram" class="footer-icon">
+            </img>
+          </a>
+          <a class="social-link" href="https://x.com/KerezsyTech" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <img src="https://img.freepik.com/vector-gratis/twitter-nuevo-logotipo-2023-x-vector-fondo-blanco_1017-45422.jpg?semt=ais_hybrid&w=740&q=80" alt="X" class="footer-icon">
+            </img>
+          </a>
+          <a class="social-link" href="https://www.facebook.com/KerezsyTech" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="https://img.icons8.com/m_rounded/1200/facebook.jpg" alt="Facebook" class="footer-icon">
+            </img>
+          </a>
+          <a class="social-link" href="https://wa.me/584241976275" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <img src="https://i.etsystatic.com/32341045/r/il/51434b/6993338768/il_300x300.6993338768_acnc.jpg" alt="WhatsApp" class="footer-icon">
+            </img>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"> 
+      <div class="container">© <span id="year"></span> Kerezsy Tech — Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <script src="products-data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      try{
+        const ALL = (typeof PRODUCTS !== 'undefined') ? PRODUCTS : (window.PRODUCTS||[]);
+        const cats = ['gpu','cpu','memory'];
+        const picks = [];
+        cats.forEach(cat=>{
+          const list = ALL.filter(p=>p.category===cat);
+          if(list.length===0) return;
+          const top = list.reduce((a,b)=> a.price>=b.price?a:b);
+          picks.push(top);
+        });
+        const container = document.getElementById('recommendedList');
+        if(!container) return;
+        container.innerHTML = '';
+        picks.forEach(p=>{
+          const card = document.createElement('div');
+          card.className = 'prod-card';
+          card.innerHTML = `
+            <img src="${p.image}" alt="${p.title}">
+            <div class="prod-info">
+              <h4>${p.title}</h4>
+              <p class="brand">${p.brand}</p>
+              <p class="desc" title="${p.desc}">${p.desc}</p>
+              <div class="prod-bottom">
+                <strong class="price">$${p.price.toFixed(2)}</strong>
+                <div class="prod-actions">
+                  <a class="btn" href="products.html?category=${p.category}" title="Ver categoría" aria-label="Ver categoría">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1" fill="currentColor"></rect><rect x="13" y="3" width="8" height="8" rx="1" fill="currentColor"></rect><rect x="3" y="13" width="8" height="8" rx="1" fill="currentColor"></rect><rect x="13" y="13" width="8" height="8" rx="1" fill="currentColor"></rect></svg>
+                  </a>
+                  <button class="add" data-id="${p.id}" aria-label="Agregar al carrito" title="Agregar al carrito">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="nav-svg"><path d="M7 4H5l-1 2H2v2h2l3.6 7.6c.2.5.7.8 1.2.8H19v-2h-8.2l-.9-1.9L19 8H8.2L7 4z" fill="currentColor"></path><circle cx="10" cy="19.5" r="1" fill="currentColor"></circle><circle cx="17" cy="19.5" r="1" fill="currentColor"></circle></svg>
+                  </button>
+                </div>
+              </div>
+            `;
+          container.appendChild(card);
+        });
+
+        document.body.addEventListener('click', function(e){
+          const b = e.target.closest('.add');
+          if(!b) return;
+          const id = b.dataset.id; const prod = ALL.find(x=>x.id===id); if(!prod) return;
+          const cart = JSON.parse(localStorage.getItem('kcart')||'[]');
+          const existing = cart.find(i=>i.id===id);
+          if(existing) existing.qty = (existing.qty||1)+1; else cart.push({id:prod.id,title:prod.title,price:prod.price,image:prod.image,qty:1});
+          localStorage.setItem('kcart', JSON.stringify(cart));
+          const el = document.getElementById('cartCount'); if(el) el.textContent = cart.reduce((s,i)=>s+(i.qty||1),0);
+          if(window.showAddConfirmation) window.showAddConfirmation('Agregado al carrito', prod.title);
+        });
+      }catch(err){console.error(err)}
+    });
+  </script>
+
+  
+  <div id="confirmModal" class="confirm-modal" role="status" aria-live="polite" style="display:none">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" fill="currentColor"></path></svg>
+    </div>
+    <div class="text">
+      <div class="title">Agregado al carrito</div>
+      <div id="confirmMsg">Producto agregado correctamente</div>
+    </div>
+  </div>
+</body>
+</html>
+

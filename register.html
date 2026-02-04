@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro - KerezsyTech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .auth-wrap{max-width:420px;margin:40px auto;padding:20px;background:var(--card);border:1px solid #222;border-radius:8px}
+    .auth-wrap h2{margin:0 0 12px}
+    .auth-wrap form{display:flex;flex-direction:column;gap:10px}
+    .auth-wrap input{padding:10px;border-radius:6px;border:1px solid #333;background:#0b0b0b;color:var(--white)}
+    .auth-wrap button{background:var(--vs-blue);border:none;color:#fff;padding:10px;border-radius:6px;cursor:pointer}
+    .small-link{font-size:14px;color:rgba(255,255,255,0.8)}
+    .msg{margin-top:8px;color:#ffb3b3}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left"><a class="logo" href="index.html"><img src="assets/logo-kerezsytech.jpeg" class="site-logo"><span class="brand">KerezsyTech</span></a></div>
+    <div class="nav-right">
+      <button id="themeToggle" class="nav-icon" title="Cambiar modo" aria-pressed="false">
+        <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+      </button>
+    </div>
+  </nav>
+  <main class="container">
+    <div class="auth-wrap">
+      <h2>Registro</h2>
+      <form id="regForm">
+        <input id="name" type="text" placeholder="Nombre" required>
+        <input id="email" type="email" placeholder="Correo electrónico" required>
+        <input id="pass" type="password" placeholder="Contraseña" required>
+        <button type="submit">Crear cuenta</button>
+        <div class="msg" id="regMsg" aria-live="polite"></div>
+      </form>
+      <p class="small-link">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('regForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const pass = document.getElementById('pass').value;
+      const msg = document.getElementById('regMsg');
+      const users = JSON.parse(localStorage.getItem('kusers')||'[]');
+      if(users.find(x=>x.email===email)){ msg.textContent='Ya existe una cuenta con ese correo.'; return; }
+      const u = {name,email,pass}; users.push(u); localStorage.setItem('kusers', JSON.stringify(users)); localStorage.setItem('kuser', JSON.stringify(u));
+      
+      if(window.showAddConfirmation){
+        window.showAddConfirmation('Usuario creado exitosamente', 'Inicio de sesión automático');
+        setTimeout(()=>{ location.href = 'index.html'; },1200);
+      } else {
+        location.href = 'index.html';
+      }
+    });
+  </script>
+</body>
+</html>
