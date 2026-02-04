@@ -9,6 +9,4 @@ Archivos:
 - styles.css, script.js: estilos y scripts de la página principal.
 
 Abrir:
-- Doble clic en index.html o iniciar un servidor local:
-  python -m http.server 8000
-  Abrir http://localhost:8000
+- Doble clic en index.html
